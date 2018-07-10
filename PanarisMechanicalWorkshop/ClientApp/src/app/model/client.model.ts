@@ -1,5 +1,5 @@
 export class Client{
-    idClient:number;
+    idClient:String;
     clientName:String;
     lastName:String;
     phoneNumber:String;
