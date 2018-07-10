@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkOrderComponent implements OnInit {
 
+  pestanaSeleccionada: String = "uno";
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  cambiarPestana(value: String) {
+
+    this.pestanaSeleccionada = value;
   }
 
 }
