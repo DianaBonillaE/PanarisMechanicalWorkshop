@@ -6,14 +6,14 @@ namespace MechanicalLibrary.Domain
 {
     public class Client
     {
-        int idClient;
+        String idClient;
         String clientName;
         String lastName;
         String phoneNumber;
         String address;
         String email;
 
-        public Client(int idClient, string clientName, string lastName, string phoneNumber, string address, string email)
+        public Client(String idClient, string clientName, string lastName, string phoneNumber, string address, string email)
         {
             this.IdClient = idClient;
             this.ClientName = clientName;
@@ -27,7 +27,7 @@ namespace MechanicalLibrary.Domain
         {
         }
 
-        public int IdClient { get => idClient; set => idClient = value; }
+        public String IdClient { get => idClient; set => idClient = value; }
         public string ClientName { get => clientName; set => clientName = value; }
         public string LastName { get => lastName; set => lastName = value; }
         public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
