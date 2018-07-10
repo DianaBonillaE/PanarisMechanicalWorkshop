@@ -44,6 +44,42 @@ namespace MechanicalLibrary.Data
 
         }
 
+        public void InsertarDetalleTrabajo(WorkDetail workDetail)
+        {
+            SqlCommand cmdProduct = new SqlCommand();
+            cmdProduct.CommandText = "Proyecto2Mechanical_insertWorkDetail";
+            cmdProduct.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdProduct.Parameters.Add(new SqlParameter("@id_work_detail", workDetail.IdWorkDetail));
+            cmdProduct.Parameters.Add(new SqlParameter("@price", workDetail.Price));
+            cmdProduct.Parameters.Add(new SqlParameter("@description", workDetail.Description));
+            cmdProduct.Parameters.Add(new SqlParameter("@id_work_order", workDetail.WorkOrder.IdWorkOrder));
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlTransaction transaction = null;
 
-    }
+            try
+            {
+                connection.Open();
+                transaction = connection.BeginTransaction();
+                cmdProduct.Connection = connection;
+                cmdProduct.Transaction = transaction;
+                cmdProduct.ExecuteNonQuery();
+                transaction.Commit();
+
+
+            }
+            catch (SqlException ex)
+            {
+                if (transaction != null)
+                    transaction.Rollback();
+                throw ex;
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+            }//finally
+
+        }
+
+}
 }

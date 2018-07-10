@@ -45,5 +45,44 @@ namespace MechanicalLibrary.Data
 
         }
 
+        public void InsertarOrdenTrabajo(WorkOrder workOrder)
+        {
+            SqlCommand cmdProduct = new SqlCommand();
+            cmdProduct.CommandText = "Proyecto2Mechanical_insertWorkOrder";
+            cmdProduct.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdProduct.Parameters.Add(new SqlParameter("@id_work_order", workOrder.IdWorkOrder));
+            cmdProduct.Parameters.Add(new SqlParameter("@description", workOrder.Description));
+            cmdProduct.Parameters.Add(new SqlParameter("@delivery_date", workOrder.DeliveryDate));
+            cmdProduct.Parameters.Add(new SqlParameter("@total_price", workOrder.TotalPrice));
+            cmdProduct.Parameters.Add(new SqlParameter("@client_id", workOrder.Client.IdClient));
+            cmdProduct.Parameters.Add(new SqlParameter("@vehicle_id", workOrder.Vehicle.VehicleId));
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlTransaction transaction = null;
+
+            try
+            {
+                connection.Open();
+                transaction = connection.BeginTransaction();
+                cmdProduct.Connection = connection;
+                cmdProduct.Transaction = transaction;
+                cmdProduct.ExecuteNonQuery();
+                transaction.Commit();
+
+
+            }
+            catch (SqlException ex)
+            {
+                if (transaction != null)
+                    transaction.Rollback();
+                throw ex;
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+            }//finally
+
+        }
+
     }
 }

@@ -22,6 +22,10 @@ import { ClientComponent } from './client/client.component';
 import { ClientListComponent } from './client/client-list/client-list.component';
 import { ClientEditComponent } from './client/client-edit/client-edit.component';
 import { ClientRegisterComponent } from './client-register/client-register.component';
+import { WorkOrderComponent } from './work-order/work-order.component';
+import { DetailWorkComponent } from './detail-work/detail-work.component';
+import { VehicledetailComponent } from './vehicledetail/vehicledetail.component';
+import { VehicleDetailComponent } from './vehicle-detail/vehicle-detail.component';
 
 
 @NgModule({
@@ -36,7 +40,11 @@ import { ClientRegisterComponent } from './client-register/client-register.compo
     ClientComponent,
     ClientListComponent,
     ClientEditComponent,
-    ClientRegisterComponent
+    ClientRegisterComponent,
+    WorkOrderComponent,
+    DetailWorkComponent,
+    VehicledetailComponent,
+    VehicleDetailComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
