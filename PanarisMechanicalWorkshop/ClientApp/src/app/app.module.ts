@@ -55,7 +55,10 @@ import { VehicleDetailComponent } from './vehicle-detail/vehicle-detail.componen
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'report', component: ReportComponent },
-      { path: 'product', component: ProductComponent }
+      { path: 'product', component: ProductComponent },
+      { path: 'detail-work', component: DetailWorkComponent },
+      { path: 'work-order', component: WorkOrderComponent },
+      { path: 'vehicle-detail', component: VehicleDetailComponent }
 
     ])
   ],
