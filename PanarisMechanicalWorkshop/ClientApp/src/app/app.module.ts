@@ -22,7 +22,9 @@ import { ClientComponent } from './client/client.component';
 import { ClientListComponent } from './client/client-list/client-list.component';
 import { ClientEditComponent } from './client/client-edit/client-edit.component';
 import { ClientRegisterComponent } from './client-register/client-register.component';
-import { VehicleInsertComponent } from './vehicle-insert/vehicle-insert.component';
+import { WorkOrderComponent } from './work-order/work-order.component';
+import { DetailWorkComponent } from './detail-work/detail-work.component';
+import { VehicleDetailComponent } from './vehicle-detail/vehicle-detail.component';
 import { ClientService } from './client/client.service';
 
 
@@ -39,7 +41,9 @@ import { ClientService } from './client/client.service';
     ClientListComponent,
     ClientEditComponent,
     ClientRegisterComponent,
-    VehicleInsertComponent
+    WorkOrderComponent,
+    DetailWorkComponent,
+    VehicleDetailComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -53,7 +57,9 @@ import { ClientService } from './client/client.service';
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'report', component: ReportComponent },
       { path: 'product', component: ProductComponent },
-      { path: 'clientP', component: ClientComponent}
+      { path: 'detail-work', component: DetailWorkComponent },
+      { path: 'work-order', component: WorkOrderComponent },
+      { path: 'vehicle-detail', component: VehicleDetailComponent }
 
     ])
   ],
