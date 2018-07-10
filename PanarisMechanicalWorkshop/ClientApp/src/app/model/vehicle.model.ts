@@ -4,7 +4,7 @@ export class Vehicle {
     color: String;
     brand: String;
     style: String;
-    year: DateTimeFormat;//ojo
+    year: String;//ojo
     power: String;
     displacement: String;
     capacity: number;

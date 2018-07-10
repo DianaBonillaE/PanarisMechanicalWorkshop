@@ -22,6 +22,8 @@ import { ClientComponent } from './client/client.component';
 import { ClientListComponent } from './client/client-list/client-list.component';
 import { ClientEditComponent } from './client/client-edit/client-edit.component';
 import { ClientRegisterComponent } from './client-register/client-register.component';
+import { VehicleInsertComponent } from './vehicle-insert/vehicle-insert.component';
+import { ClientService } from './client/client.service';
 
 
 @NgModule({
@@ -36,7 +38,8 @@ import { ClientRegisterComponent } from './client-register/client-register.compo
     ClientComponent,
     ClientListComponent,
     ClientEditComponent,
-    ClientRegisterComponent
+    ClientRegisterComponent,
+    VehicleInsertComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -49,11 +52,12 @@ import { ClientRegisterComponent } from './client-register/client-register.compo
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'report', component: ReportComponent },
-      { path: 'product', component: ProductComponent }
+      { path: 'product', component: ProductComponent },
+      { path: 'clientP', component: ClientComponent}
 
     ])
   ],
-  providers: [{
+  providers: [ClientService, {
     provide: NG_SELECT_DEFAULT_CONFIG,
     useValue: {
         notFoundText: 'Este registro no es valido.'

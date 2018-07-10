@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace MechanicalLibrary.Data
 {
-    class ClientData
+ public  class ClientData
     {
         String connectionString;
 

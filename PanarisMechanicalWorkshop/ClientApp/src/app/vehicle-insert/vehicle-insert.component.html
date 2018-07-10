@@ -1,0 +1,25 @@
+<h1 class="h1Class">Insertar Vehiculo</h1>
+
+<input type="text" class="form-control" placeholder="Placa del vehiculo" [(ngModel)]="vehicle.vehicleId">
+<br>
+<input type="text" class="form-control" placeholder="Color del vehiculo" [(ngModel)]="vehicle.color">
+<br>
+<input type="text" class="form-control" placeholder="Marca del vehiculo" [(ngModel)]="vehicle.brand">
+<br>
+<input type="text" class="form-control" placeholder="Estilo del vehiculo" [(ngModel)]="vehicle.style">
+<br>
+<input type="text" class="form-control" placeholder="Año del vehiculo" [(ngModel)]="vehicle.year">
+<br>
+<input type="text" class="form-control" placeholder="Potencia del vehiculo" [(ngModel)]="vehicle.power">
+<br>
+<input type="text" class="form-control" placeholder="Cilindraje del vehiculo" [(ngModel)]="vehicle.displacement">
+<br>
+<input type="text" class="form-control" placeholder="Capacidad del vehiculo" [(ngModel)]="vehicle.capacity">
+<br>
+<input type="text" class="form-control" placeholder="Peso del vehiculo" [(ngModel)]="vehicle.weight">
+<br>
+<input type="text" class="form-control" placeholder="Numero de Chasis" [(ngModel)]="vehicle.chasisNumber">
+<br>
+<input type="text" class="form-control" placeholder="Numero de motor" [(ngModel)]="vehicle.motorNumber">
+<br>
+<button type="button" (click)="insertVehicle()">Insertar</button>
