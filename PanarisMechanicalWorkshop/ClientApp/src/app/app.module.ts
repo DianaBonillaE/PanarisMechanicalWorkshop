@@ -18,6 +18,10 @@ import { PDFExportModule } from '@progress/kendo-angular-pdf-export';
 import { NgSelectModule, NG_SELECT_DEFAULT_CONFIG } from '@ng-select/ng-select';
 import { ProductComponent } from './product/product.component';
 import { ReportComponent } from './report/report.component';
+import { ClientComponent } from './client/client.component';
+import { ClientListComponent } from './client/client-list/client-list.component';
+import { ClientEditComponent } from './client/client-edit/client-edit.component';
+import { ClientRegisterComponent } from './client-register/client-register.component';
 
 
 @NgModule({
@@ -28,7 +32,11 @@ import { ReportComponent } from './report/report.component';
     CounterComponent,
     FetchDataComponent,
     ProductComponent,
-    ReportComponent
+    ReportComponent,
+    ClientComponent,
+    ClientListComponent,
+    ClientEditComponent,
+    ClientRegisterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
