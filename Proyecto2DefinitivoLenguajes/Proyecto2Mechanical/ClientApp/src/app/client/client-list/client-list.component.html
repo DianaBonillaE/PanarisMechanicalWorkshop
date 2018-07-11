@@ -1,24 +1,30 @@
+<div class="panel panel-default">
 
-<table class="table table-bordered table-striped">
-  <thead>
-      <tr>
+  <div class="panel-body">
+
+    <table class="table table-bordered table-striped">
+      <thead class="thead">
+        <tr>
           <td>Cédula</td>
           <td>Nombre</td>
           <td>Apellidos</td>
           <td>Número</td>
           <td>Dirección</td>
           <td>Correo</td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr *ngFor="let client of clients">
+        </tr>
+      </thead>
+      <tbody class="tbody">
+        <tr *ngFor="let client of clients">
           <td>{{client.idClient}}</td>
           <td>{{client.clientName}}</td>
           <td>{{client.lastName}}</td>
           <td>{{client.phoneNumber}}</td>
           <td>{{client.address}}</td>
           <td>{{client.email}}</td>
-      </tr>
-  </tbody>
-</table>
-<button class="btn btn-success" (click)="boton()">Llamar</button>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+<button class="button">Elegir</button>

@@ -28,3 +28,12 @@ C:\Users\Tito\Proyecto2DefinitivoLenguajes\MechanicalLibrary\obj\Debug\netcoreap
 C:\Users\Tito\Proyecto2DefinitivoLenguajes\MechanicalLibrary\obj\Debug\netcoreapp2.0\MechanicalLibrary.AssemblyInfo.cs
 C:\Users\Tito\Proyecto2DefinitivoLenguajes\MechanicalLibrary\obj\Debug\netcoreapp2.0\MechanicalLibrary.dll
 C:\Users\Tito\Proyecto2DefinitivoLenguajes\MechanicalLibrary\obj\Debug\netcoreapp2.0\MechanicalLibrary.pdb
+C:\Users\Diana\Documents\PanarisMechanicalWorkshop\Proyecto2DefinitivoLenguajes\MechanicalLibrary\bin\Debug\netcoreapp2.0\MechanicalLibrary.deps.json
+C:\Users\Diana\Documents\PanarisMechanicalWorkshop\Proyecto2DefinitivoLenguajes\MechanicalLibrary\bin\Debug\netcoreapp2.0\MechanicalLibrary.dll
+C:\Users\Diana\Documents\PanarisMechanicalWorkshop\Proyecto2DefinitivoLenguajes\MechanicalLibrary\bin\Debug\netcoreapp2.0\MechanicalLibrary.pdb
+C:\Users\Diana\Documents\PanarisMechanicalWorkshop\Proyecto2DefinitivoLenguajes\MechanicalLibrary\obj\Debug\netcoreapp2.0\MechanicalLibrary.csprojAssemblyReference.cache
+C:\Users\Diana\Documents\PanarisMechanicalWorkshop\Proyecto2DefinitivoLenguajes\MechanicalLibrary\obj\Debug\netcoreapp2.0\MechanicalLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Diana\Documents\PanarisMechanicalWorkshop\Proyecto2DefinitivoLenguajes\MechanicalLibrary\obj\Debug\netcoreapp2.0\MechanicalLibrary.AssemblyInfoInputs.cache
+C:\Users\Diana\Documents\PanarisMechanicalWorkshop\Proyecto2DefinitivoLenguajes\MechanicalLibrary\obj\Debug\netcoreapp2.0\MechanicalLibrary.AssemblyInfo.cs
+C:\Users\Diana\Documents\PanarisMechanicalWorkshop\Proyecto2DefinitivoLenguajes\MechanicalLibrary\obj\Debug\netcoreapp2.0\MechanicalLibrary.dll
+C:\Users\Diana\Documents\PanarisMechanicalWorkshop\Proyecto2DefinitivoLenguajes\MechanicalLibrary\obj\Debug\netcoreapp2.0\MechanicalLibrary.pdb
