@@ -27,9 +27,7 @@ namespace MechanicalLibrary.Data
             cmdClient.Parameters.Add(new SqlParameter("@phone_number", client.PhoneNumber));
             cmdClient.Parameters.Add(new SqlParameter("@address", client.Address));
             cmdClient.Parameters.Add(new SqlParameter("@email", client.Email));
-            SqlParameter parIdClient = new SqlParameter("@id_client",System.Data.SqlDbType.VarChar);
-            parIdClient.Direction = System.Data.ParameterDirection.Output;
-            cmdClient.Parameters.Add(parIdClient);
+         
 
             SqlConnection connection = new SqlConnection(connectionString);
             SqlTransaction transaction = null;
