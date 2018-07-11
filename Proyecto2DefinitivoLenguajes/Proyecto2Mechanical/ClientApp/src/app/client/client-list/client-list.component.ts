@@ -23,5 +23,10 @@ export class ClientListComponent implements OnInit {
      this.clients = data;
     });
   }
+
+  click(client:Client){
+    alert(client.clientName);
+    
+  }
   }
 

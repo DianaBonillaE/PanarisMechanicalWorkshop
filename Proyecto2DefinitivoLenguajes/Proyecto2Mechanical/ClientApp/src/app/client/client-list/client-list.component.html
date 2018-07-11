@@ -14,7 +14,7 @@
         </tr>
       </thead>
       <tbody class="tbody">
-        <tr *ngFor="let client of clients">
+        <tr *ngFor="let client of clients" (click)="click(client)">
           <td>{{client.idClient}}</td>
           <td>{{client.clientName}}</td>
           <td>{{client.lastName}}</td>
