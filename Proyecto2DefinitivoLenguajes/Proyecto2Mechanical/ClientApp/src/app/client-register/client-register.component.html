@@ -1,8 +1,5 @@
-<div *ngIf="formulario===true">
-  <div id="pricing" class="container-fluid">
-    <div class="row slideanim">
-      <div class="col-sm-4 col-xs-12"></div>
-      <div class="col-sm-4 col-xs-12">
+<div *ngIf="form===true">
+  <div id="pricing" class="container-fluid" style="margin-left:200px;">
         <div class="panel panel-default ">
           <div class="panel-heading text-center">
             <h1>Ingresar Clientes</h1>
@@ -12,13 +9,13 @@
               <input type="email" class="form-control" id="idClient" placeholder="Cédula" required>
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="client_name" placeholder="Nombre" required>
+              <input type="text" class="form-control" id="clientName" placeholder="Nombre" required>
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="last_name" placeholder="Apellidos" required>
+              <input type="text" class="form-control" id="lastName" placeholder="Apellidos" required>
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="phone_number" placeholder="Número de teléfono" required>
+              <input type="text" class="form-control" id="phoneNumber" placeholder="Número de teléfono" required>
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
               <input type="text" class="form-control" id="address" placeholder="Dirección">
@@ -26,16 +23,55 @@
             <div class="form-group" style="width: 75%; margin-left: 15%">
               <input type="text" class="form-control" id="email" placeholder="Email" required>
             </div>
-            <a href="/client" type="submit" class="btn btn-ttc" (change)="mostrarFormularioVehiculo()" (click)="insertClient()">Editar</a>
+            <a  type="submit" class="btn btn-ttc" (click)="showVehicleform()">Insertar</a>
           </div>
-        </div>
-      </div>
-      <div class="col-sm-4 col-xs-12"></div>
-    </div>
   </div>
 </div>
-<div *ngIf="formularioInsertar===true">
-  
+  </div>
+<div *ngIf="formInsert===true">
+  <div id="pricing" class="container-fluid" style="margin-left:200px;">
+        <div class="panel panel-default ">
+          <div class="panel-heading text-center">
+            <h1>Ingresar Vehiculo</h1>
+          </div>
+          <div class="panel-body">
+            <div class="form-group" style="width: 75%; margin-left: 15%">
+              <input type="email" class="form-control" id="vehicleId" placeholder="Placa" required>
+            </div>
+            <div class="form-group" style="width: 75%; margin-left: 15%">
+              <input type="text" class="form-control" id="color" placeholder="Color" required>
+            </div>
+            <div class="form-group" style="width: 75%; margin-left: 15%">
+              <input type="text" class="form-control" id="brand" placeholder="Marca" required>
+            </div>
+            <div class="form-group" style="width: 75%; margin-left: 15%">
+              <input type="text" class="form-control" id="style" placeholder="Estilo" required>
+            </div>
+            <div class="form-group" style="width: 75%; margin-left: 15%">
+              <input type="text" class="form-control" id="year" placeholder="Año">
+            </div>
+            <div class="form-group" style="width: 75%; margin-left: 15%">
+              <input type="text" class="form-control" id="power" placeholder="Poder" required>
+            </div>
+            <div class="form-group" style="width: 75%; margin-left: 15%">
+              <input type="text" class="form-control" id="displacement" placeholder="Desplazamiento" required>
+            </div>
+            <div class="form-group" style="width: 75%; margin-left: 15%">
+              <input type="text" class="form-control" id="capacity" placeholder="Capacidad" required>
+            </div>
+            <div class="form-group" style="width: 75%; margin-left: 15%">
+              <input type="text" class="form-control" id="weight" placeholder="Peso" required>
+            </div>
+            <div class="form-group" style="width: 75%; margin-left: 15%">
+              <input type="text" class="form-control" id="chasisNumber" placeholder="Numero de chasis" required>
+            </div>
+            <div class="form-group" style="width: 75%; margin-left: 15%">
+              <input type="text" class="form-control" id="motorNumber" placeholder="Numero de motor" required>
+            </div>
+            <a type="submit" class="btn btn-ttc" (click)="vehicleInsert()">Insertar</a>
+          </div>
+        </div>
+  </div>
 </div>
 <div class="container-fluid bg-2 text-center" style="margin-top:250px;">
   <h3 class="margin">Mechanical Workshop</h3>

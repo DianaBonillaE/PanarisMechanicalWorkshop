@@ -10,14 +10,14 @@ import { ClientService } from '../service/client.service';
   styleUrls: ['./client-register.component.css']
 })
 export class ClientRegisterComponent implements OnInit {
-  formularioInsertar: boolean;
-  formulario:boolean;
+  formInsert: boolean;
+  form:boolean;
   client: Client = new Client();
   clients: Client[] = new Array<Client>();
     constructor(private router: Router, private service: ClientService) { }
   
     ngOnInit() {
-      this.formulario=true;
+      this.form=true;
     }
   
     insertClient(){
@@ -28,8 +28,8 @@ export class ClientRegisterComponent implements OnInit {
       );
     }
   
-    mostrarFormularioVehiculo() {
-      this.formulario=false;
-      this.formularioInsertar = true;
+    showVehicleform() {
+      this.form = false;
+      this.formInsert = true;
     }
 }
