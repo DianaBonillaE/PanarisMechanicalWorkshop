@@ -29,6 +29,8 @@ import { ClientService } from './service/client.service';
 import { Client } from './model/client.model';
 import { WorkDetailOrderService } from './service/work-detail-order.service';
 import { WorkOrderService } from './service/work-order.service';
+import { VehicleInsertComponent } from './vehicle-insert/vehicle-insert.component';
+import { VehicleService } from './service/vehicle-service';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { WorkOrderService } from './service/work-order.service';
     ProductComponent,
     ReportComponent,
     VehicleDetailComponent,
-    WorkOrderComponent
+    WorkOrderComponent,
+    VehicleInsertComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -59,7 +62,8 @@ import { WorkOrderService } from './service/work-order.service';
       { path: 'client', component: ClientComponent },
       { path: 'client-list', component: ClientListComponent },
       { path: 'client-edit', component: ClientEditComponent },
-      { path: 'register-client', component: ClientRegisterComponent }
+      { path: 'register-client', component: ClientRegisterComponent },
+      { path: 'register-vehicle', component: VehicleInsertComponent }
 
     ])
   ],
@@ -68,7 +72,7 @@ import { WorkOrderService } from './service/work-order.service';
     useValue: {
       notFoundText: 'Este registro no es valido.'
     }
-  }, ClientService,WorkDetailOrderService,WorkOrderService],
+  }, ClientService, WorkDetailOrderService, WorkOrderService, VehicleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

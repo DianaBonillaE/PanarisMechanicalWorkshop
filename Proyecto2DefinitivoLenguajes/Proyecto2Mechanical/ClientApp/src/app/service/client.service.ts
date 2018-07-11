@@ -2,8 +2,6 @@ import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Client } from '../model/client.model';
-import { Vehicle } from '../model/vehicle.model';
-
 
 @Injectable()
 export class ClientService {
@@ -22,7 +20,5 @@ export class ClientService {
   public getAll() {
     return this.http.get(this.baseUrl +'api/client');
   }
-  public insertV(vehicle: Vehicle) {
-    return this.http.post(this.baseUrl + 'api/vehicle' , vehicle);
-  }
+
 }

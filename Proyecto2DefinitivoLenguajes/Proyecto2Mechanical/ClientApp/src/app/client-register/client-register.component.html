@@ -29,49 +29,7 @@
 </div>
   </div>
 <div *ngIf="formInsert===true">
-  <div id="pricing" class="container-fluid" style="margin-left:200px;">
-        <div class="panel panel-default ">
-          <div class="panel-heading text-center">
-            <h1>Ingresar Vehiculo</h1>
-          </div>
-          <div class="panel-body">
-            <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="email" class="form-control" id="vehicleId" placeholder="Placa" required [(ngModel)]="vehicle.vehicleId">
-            </div>
-            <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="color" placeholder="Color" required [(ngModel)]="vehicle.color">
-            </div>
-            <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="brand" placeholder="Marca" required [(ngModel)]="vehicle.brand">
-            </div>
-            <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="style" placeholder="Estilo" required [(ngModel)]="vehicle.style">
-            </div>
-            <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="year" placeholder="Año" required [(ngModel)]="vehicle.year">
-            </div>
-            <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="power" placeholder="Poder" required [(ngModel)]="vehicle.power">
-            </div>
-            <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="displacement" placeholder="Desplazamiento" required [(ngModel)]="vehicle.displacement">
-            </div>
-            <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="capacity" placeholder="Capacidad" required [(ngModel)]="vehicle.capacity">
-            </div>
-            <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="weight" placeholder="Peso" required [(ngModel)]="vehicle.weight">
-            </div>
-            <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="chasisNumber" placeholder="Numero de chasis" required [(ngModel)]="vehicle.chasisNumber">
-            </div>
-            <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="motorNumber" placeholder="Numero de motor" required [(ngModel)]="vehicle.motorNumber">
-            </div>
-            <a type="submit" class="btn btn-ttc" (click)="vehicleInsert()">Insertar</a>
-          </div>
-        </div>
-  </div>
+  <app-vehicle-insert></app-vehicle-insert>
 </div>
 <div class="container-fluid bg-2 text-center" style="margin-top:250px;">
   <h3 class="margin">Mechanical Workshop</h3>
