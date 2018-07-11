@@ -26,7 +26,6 @@ import { WorkOrderComponent } from './work-order/work-order.component';
 //ng select
 import { NgSelectModule, NG_SELECT_DEFAULT_CONFIG } from '@ng-select/ng-select';
 import { ClientService } from './service/client.service';
-import { VehicleService } from './service/vehicle.service';
 import { Client } from './model/client.model';
 
 @NgModule({
@@ -67,7 +66,7 @@ import { Client } from './model/client.model';
     useValue: {
       notFoundText: 'Este registro no es valido.'
     }
-  }, ClientService, VehicleService],
+  }, ClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

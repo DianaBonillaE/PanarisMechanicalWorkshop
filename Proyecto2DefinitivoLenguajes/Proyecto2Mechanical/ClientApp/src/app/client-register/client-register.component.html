@@ -6,22 +6,22 @@
           </div>
           <div class="panel-body">
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="email" class="form-control" id="idClient" placeholder="Cédula" required>
+              <input type="email" class="form-control" id="idClient" placeholder="Cédula" required [(ngModel)]="client.idClient">
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="clientName" placeholder="Nombre" required>
+              <input type="text" class="form-control" id="clientName" placeholder="Nombre" required [(ngModel)]="client.clientName">
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="lastName" placeholder="Apellidos" required>
+              <input type="text" class="form-control" id="lastName" placeholder="Apellidos" required [(ngModel)]="client.lastName">
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="phoneNumber" placeholder="Número de teléfono" required>
+              <input type="text" class="form-control" id="phoneNumber" placeholder="Número de teléfono" required [(ngModel)]="client.phoneNumber">
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="address" placeholder="Dirección">
+              <input type="text" class="form-control" id="address" placeholder="Dirección" [(ngModel)]="user.address">
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="email" placeholder="Email" required>
+              <input type="text" class="form-control" id="email" placeholder="Email" required [(ngModel)]="user.email">
             </div>
             <a  type="submit" class="btn btn-ttc" (click)="showVehicleform()">Insertar</a>
           </div>
@@ -36,37 +36,37 @@
           </div>
           <div class="panel-body">
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="email" class="form-control" id="vehicleId" placeholder="Placa" required>
+              <input type="email" class="form-control" id="vehicleId" placeholder="Placa" required [(ngModel)]="vehicle.vehicleId">
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="color" placeholder="Color" required>
+              <input type="text" class="form-control" id="color" placeholder="Color" required [(ngModel)]="vehicle.color">
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="brand" placeholder="Marca" required>
+              <input type="text" class="form-control" id="brand" placeholder="Marca" required [(ngModel)]="vehicle.brand">
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="style" placeholder="Estilo" required>
+              <input type="text" class="form-control" id="style" placeholder="Estilo" required [(ngModel)]="vehicle.style">
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="year" placeholder="Año">
+              <input type="text" class="form-control" id="year" placeholder="Año" required [(ngModel)]="vehicle.year">
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="power" placeholder="Poder" required>
+              <input type="text" class="form-control" id="power" placeholder="Poder" required [(ngModel)]="vehicle.power">
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="displacement" placeholder="Desplazamiento" required>
+              <input type="text" class="form-control" id="displacement" placeholder="Desplazamiento" required [(ngModel)]="vehicle.displacement">
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="capacity" placeholder="Capacidad" required>
+              <input type="text" class="form-control" id="capacity" placeholder="Capacidad" required [(ngModel)]="vehicle.capacity">
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="weight" placeholder="Peso" required>
+              <input type="text" class="form-control" id="weight" placeholder="Peso" required [(ngModel)]="vehicle.weight">
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="chasisNumber" placeholder="Numero de chasis" required>
+              <input type="text" class="form-control" id="chasisNumber" placeholder="Numero de chasis" required [(ngModel)]="vehicle.chasisNumber">
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="motorNumber" placeholder="Numero de motor" required>
+              <input type="text" class="form-control" id="motorNumber" placeholder="Numero de motor" required [(ngModel)]="vehicle.motorNumber">
             </div>
             <a type="submit" class="btn btn-ttc" (click)="vehicleInsert()">Insertar</a>
           </div>

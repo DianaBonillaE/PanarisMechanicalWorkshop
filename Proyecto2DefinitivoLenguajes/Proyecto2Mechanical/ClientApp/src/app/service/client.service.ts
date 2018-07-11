@@ -17,11 +17,14 @@ export class ClientService {
 
 
   
-  public insertClient(client: Client) {
-    return this.http.post(this.baseUrl+'api/client', client);
+  public insert(id: string, name: string, lastName: string, phone: string, address: string, email: string) {
+    return this.http.get(this.baseUrl + 'api/client/' + id + '/' + name + '/' + lastName + '/' + phone + '/' + address + '/'+ email);
   }
 
   public getAll() {
     return this.http.get(this.baseUrl +'api/client');
+  }
+  public insertV(vehicleId: string, color: string, brand: string, style: string, year: string, power: string, displacement: string, capacity: string, weight: string, chasisNumber: string, motorNumber: string) {
+    return this.http.get(this.baseUrl + 'api/vehicle');
   }
 }

@@ -1,14 +1,14 @@
 export class Vehicle {
 
-    vehicleId: String;
-    color: String;
-    brand: String;
-    style: String;
-    year: String;//ojo
-    power: String;
-    displacement: String;
-    capacity: number;
-    weight: number;
-    chasisNumber: String;
-    motorNumber: String;
+    vehicleId: string;
+    color: string;
+    brand: string;
+    style: string;
+    year: string;//ojo
+    power: string;
+    displacement: string;
+    capacity: string;
+    weight: string;
+    chasisNumber: string;
+    motorNumber: string;
 }
