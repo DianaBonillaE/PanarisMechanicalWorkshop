@@ -2,6 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Client } from '../model/client.model';
+import { Vehicle } from '../model/vehicle.model';
 
 
 @Injectable()
@@ -13,18 +14,15 @@ export class ClientService {
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.baseUrl = baseUrl;
   }
-
-
-
-  
-  public insert(id: string, name: string, lastName: string, phone: string, address: string, email: string) {
-    return this.http.get(this.baseUrl + 'api/client/' + id + '/' + name + '/' + lastName + '/' + phone + '/' + address + '/'+ email);
+  public insert(client: Client) {
+    console.log('entro al service');
+    return this.http.post(this.baseUrl + 'api/client', client);
   }
 
   public getAll() {
     return this.http.get(this.baseUrl +'api/client');
   }
-  public insertV(vehicleId: string, color: string, brand: string, style: string, year: string, power: string, displacement: string, capacity: string, weight: string, chasisNumber: string, motorNumber: string) {
-    return this.http.get(this.baseUrl + 'api/vehicle');
+  public insertV(vehicle: Vehicle) {
+    return this.http.post(this.baseUrl + 'api/vehicle' , vehicle);
   }
 }
