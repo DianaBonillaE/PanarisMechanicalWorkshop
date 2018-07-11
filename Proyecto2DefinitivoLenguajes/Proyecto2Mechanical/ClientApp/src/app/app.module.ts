@@ -59,7 +59,9 @@ import { Client } from './model/client.model';
       { path: 'vehicle-detail', component: VehicleDetailComponent },
       { path: 'client', component: ClientComponent },
       { path: 'client-list', component: ClientListComponent },
-      { path: 'client-edit', component: ClientEditComponent }
+      { path: 'client-edit', component: ClientEditComponent },
+      { path: 'register-client', component: ClientRegisterComponent }
+
     ])
   ],
   providers: [{

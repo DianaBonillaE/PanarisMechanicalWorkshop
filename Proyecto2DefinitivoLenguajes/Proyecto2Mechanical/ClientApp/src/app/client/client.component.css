@@ -1,0 +1,27 @@
+p.footer {
+  color: #fff;
+}
+
+.panel-footer .btn:hover {
+  border: 1px solid #69B28E;
+  background-color: #fff !important;
+  color: #69B28E;
+}
+
+.panel-footer {
+  background-color: white !important;
+}
+
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+
+
+.panel:hover {
+  box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+}

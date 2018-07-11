@@ -1,3 +1,35 @@
-<p>
-  client-edit works!
-</p>
+<div id="pricing" class="container-fluid">
+  <div class="row slideanim">
+    <div class="col-sm-4 col-xs-12"></div>
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default ">
+        <div class="panel-heading text-center">
+          <h1>Editar Cliente</h1>
+        </div>
+        <div class="panel-body">
+          <div class="form-group" style="width: 75%; margin-left: 15%">
+            <input type="email" class="form-control" id="idClient" required>
+          </div>
+          <div class="form-group" style="width: 75%; margin-left: 15%">
+            <input type="text" class="form-control" id="client_name" required>
+          </div>
+          <div class="form-group" style="width: 75%; margin-left: 15%">
+            <input type="text" class="form-control" id="last_name" required>
+          </div>
+          <div class="form-group" style="width: 75%; margin-left: 15%">
+            <input type="text" class="form-control" id="phone_number">
+          </div>
+          <div class="form-group" style="width: 75%; margin-left: 15%">
+            <input type="text" class="form-control" id="address" required>
+          </div>
+          <div class="form-group" style="width: 75%; margin-left: 15%">
+            <input type="text" class="form-control" id="email" required>
+          </div>
+          <a href="/client" type="submit" class="btn btn-ttc" (click)="edit()">Editar</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 col-xs-12"></div>
+  </div>
+</div>
+
