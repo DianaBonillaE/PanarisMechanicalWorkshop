@@ -13,9 +13,9 @@
 <div *ngIf="pestanaSeleccionada==='uno'" class="container">
 
   <h1 class="h1Class">Insertar un producto en un detalle de orden</h1>
-
-  <ng-select [items]="cities" bindLabel="name" placeholder="Seleccione una Orden de trabajo" (change)="buscarDetallesTrabajo()"
-    [(ngModel)]="selectedCity">
+<button class="btn btn-success" (click)="imprimir()">imprimir</button>
+  <ng-select [items]="workOrder" bindLabel="description" bindValue="idWorkOrder" placeholder="Seleccione una Orden de trabajo" (change)="getWorkDetailsByOrder()"
+    [(ngModel)]="selectedWorkOrder">
   </ng-select>
   <br>
   <ng-select [items]="cities" bindLabel="name" placeholder="Seleccione un detalle de trabajo" (change)="mostrarFormularioInsertar()"
