@@ -41,7 +41,6 @@ import { Client } from './model/client.model';
     ProductComponent,
     ReportComponent,
     VehicleDetailComponent,
-    VehicleInsertComponent,
     WorkOrderComponent
   ],
   imports: [
