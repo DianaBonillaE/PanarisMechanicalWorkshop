@@ -1,5 +1,3 @@
-<h1 class="h1Class">Insertar Clientes</h1>
-
 <div *ngIf="formulario===true">
   <div id="pricing" class="container-fluid">
     <div class="row slideanim">
@@ -7,26 +5,26 @@
       <div class="col-sm-4 col-xs-12">
         <div class="panel panel-default ">
           <div class="panel-heading text-center">
-            <h1>Editar Cliente</h1>
+            <h1>Ingresar Clientes</h1>
           </div>
           <div class="panel-body">
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="email" class="form-control" id="idClient" required>
+              <input type="email" class="form-control" id="idClient" placeholder="Cédula" required>
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="client_name" required>
+              <input type="text" class="form-control" id="client_name" placeholder="Nombre" required>
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="last_name" required>
+              <input type="text" class="form-control" id="last_name" placeholder="Apellidos" required>
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="phone_number">
+              <input type="text" class="form-control" id="phone_number" placeholder="Número de teléfono" required>
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="address" required>
+              <input type="text" class="form-control" id="address" placeholder="Dirección">
             </div>
             <div class="form-group" style="width: 75%; margin-left: 15%">
-              <input type="text" class="form-control" id="email" required>
+              <input type="text" class="form-control" id="email" placeholder="Email" required>
             </div>
             <a href="/client" type="submit" class="btn btn-ttc" (change)="mostrarFormularioVehiculo()" (click)="insertClient()">Editar</a>
           </div>
@@ -37,5 +35,9 @@
   </div>
 </div>
 <div *ngIf="formularioInsertar===true">
-  <app-vehicle-insert></app-vehicle-insert>
+  
+</div>
+<div class="container-fluid bg-2 text-center" style="margin-top:250px;">
+  <h3 class="margin">Mechanical Workshop</h3>
+  <p style="color:white;">El mejor hospital para tu vehiculo</p>
 </div>

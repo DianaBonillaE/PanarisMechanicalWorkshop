@@ -20,7 +20,6 @@ import { DetailWorkComponent } from './detail-work/detail-work.component';
 import { ProductComponent } from './product/product.component';
 import { ReportComponent } from './report/report.component';
 import { VehicleDetailComponent } from './vehicle-detail/vehicle-detail.component';
-import { VehicleInsertComponent } from './vehicle-insert/vehicle-insert.component';
 import { WorkOrderComponent } from './work-order/work-order.component';
 
 
