@@ -45,20 +45,31 @@ export class ProductComponent {
     this.workOrderService.getAllOrders().subscribe(data => this.workOrder = data);
   }
 
-  getWorkDetailsByOrder(){
-    this.workDetailOrderService.getWorkDetailsByOrder(this.selectedWorkOrder).subscribe(
-      data=> this.workDetail=data
-    );
+  getWorkDetailsByOrder() {
+    this.ocultarFormularios();
+    if (this.selectedWorkOrder > 0) {
+      this.workDetailOrderService.getWorkDetailsByOrder(this.selectedWorkOrder).subscribe(
+        data => this.workDetail = data
+      );
+    }
+
+  }
+
+  private ocultarFormularios() {
+    this.formularioInsertar = false;
+    this.formularioEditar = false;
+    this.formularioEliminar = false;
   }
 
 
-  ngOnInit() {
-  }
 
-  imprimir(){
-    console.log(this.workDetail.forEach(element => {
-      element
-    }));
+
+  imprimir() {
+    for (let index = 0; index < this.workDetail.length; index++) {
+      const element = this.workDetail[index];
+      console.log(element);
+    }
+
   }
 
   cambiarPestana(value: String) {
@@ -66,18 +77,14 @@ export class ProductComponent {
     this.pestanaSeleccionada = value;
   }
 
-  buscarDetallesTrabajo() {
-    this.formularioInsertar = false;
-  }
 
   mostrarFormularioInsertar() {
-
     this.formularioInsertar = true;
   }
 
 
   buscarDetallesTrabajoEditar() {
-    this.formularioEditar = false;
+
   }
 
   mostrarFormularioEditar() {
@@ -91,6 +98,6 @@ export class ProductComponent {
   }
 
   buscarDetallesTrabajoEliminar() {
-    this.formularioEliminar = false;
+
   }
 }
