@@ -20,10 +20,12 @@ export class ClientComponent implements OnInit {
   // For @Output
   dataFromChild: string;
   fetchDataFromChild(data: string) {
+    this.pestanaSeleccionada=data;
     this.dataFromChild = data;
   }
 
   mostrar() {
+    
     alert(this.dataFromChild);
   }
 }
