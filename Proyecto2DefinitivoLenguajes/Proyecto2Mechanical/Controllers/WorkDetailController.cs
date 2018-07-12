@@ -25,7 +25,6 @@ namespace Proyecto2MechanicalApi.Controllers
         [HttpGet("{id:int}", Name = "Get")]
         public IList<WorkDetail> Get(int id)
         {
-
             WorkDetailData workDetailData =
                 new WorkDetailData(configuration.GetConnectionString("MechanicalContext").ToString());
             return workDetailData.GetWorkDetailsByOrder(id);
@@ -34,8 +33,10 @@ namespace Proyecto2MechanicalApi.Controllers
 
 
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody] WorkDetail workDetail)
         {
+            WorkDetailData workDetailData = new WorkDetailData(configuration.GetConnectionString("MechanicalContext").ToString());
+            workDetailData.InsertarDetalleTrabajo(workDetail);
         }
 
     }

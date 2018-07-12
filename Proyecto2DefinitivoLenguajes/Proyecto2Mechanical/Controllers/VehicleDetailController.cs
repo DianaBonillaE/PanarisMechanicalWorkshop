@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MechanicalLibrary.Domain;
+using MechanicalLibrary.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -16,12 +18,14 @@ namespace Proyecto2MechanicalApi.Controllers
 
         public VehicleDetailController(IConfiguration configuration)
         {
-            //this.configuration = configuration;
+            this.configuration = configuration;
         }
 
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]VehicleDetail vehicleDetail)
         {
+            VehicleDetailData vehicleDetailData = new VehicleDetailData(configuration.GetConnectionString("MechanicalContext").ToString());
+            vehicleDetailData.InsertarDetalleTrabajo(vehicleDetail);
         }
 
     }
