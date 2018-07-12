@@ -6,6 +6,8 @@ import { WorkDetail } from '../model/workDetail.model';
 import { WorkOrder } from '../model/workOrder.model';
 import { WorkOrderService } from '../service/work-order.service';
 import { WorkDetailOrderService } from '../service/work-detail-order.service';
+import { Product } from '../model/product.model';
+import { ProductService } from '../service/product.service';
 
 @Component({
   selector: 'app-product',
@@ -18,30 +20,52 @@ export class ProductComponent {
   workOrder: WorkOrder[] = new Array();
   selectedWorkDetail: number;
   selectedWorkOrder: number;
+  productInsert: Product = new Product();
+  products:Product[]= new Array();
 
   pestanaSeleccionada: String = "uno";
   formularioInsertar: boolean = false;
   formularioEditar: boolean = false;
   formularioEliminar: boolean = false;
 
-  cities = [
-    { id: 1, name: 'Vilnius' },
-    { id: 2, name: 'Kaunas' },
-    { id: 3, name: 'Pavilnys', disabled: true },
-    { id: 4, name: 'Pabradė' },
-    { id: 5, name: 'Klaipėda' }
-  ];
+
   ordenado = [
-    { id: 1, name: 'ordenado' },
-    { id: 0, name: 'No ordenado' }
+    { state: true, name: 'ordenado' },
+    { state: false, name: 'No ordenado' }
   ];
 
-  selectedCity: any;
 
-  constructor(private workOrderService: WorkOrderService, private workDetailOrderService: WorkDetailOrderService) {
+
+  constructor(private workOrderService: WorkOrderService, private workDetailOrderService: WorkDetailOrderService, private productService: ProductService) {
     this.getAllOrders();
   }
+
+  insertProduct() {
+    this.productInsert.workDetail.idWorkDetail = this.selectedWorkDetail;
+    this.productInsert.workDetail.workOrder.idWorkOrder = this.selectedWorkOrder;
+
+    this.productService.insertProduct(this.productInsert).subscribe();
+
+    this.reiniciarTodo();
+  }
+
+  getProducts(){
+    if(this.selectedWorkDetail>0){
+    this.productService.getAllProductByIdWorkDetail(this.selectedWorkDetail).subscribe(
+      data=>this.products=data
+    );}
+  }
+
+  reiniciarTodo() {
+    this.productInsert = new Product();
+    this.selectedWorkDetail = undefined;
+    this.selectedWorkOrder = undefined;
+    this.products=new Array();
+  
+  }
+
   getAllOrders() {
+  
     this.workOrderService.getAllOrders().subscribe(data => this.workOrder = data);
   }
 
@@ -64,27 +88,15 @@ export class ProductComponent {
 
 
 
-  imprimir() {
-    for (let index = 0; index < this.workDetail.length; index++) {
-      const element = this.workDetail[index];
-      console.log(element);
-    }
-
-  }
 
   cambiarPestana(value: String) {
-
+    this.reiniciarTodo();
     this.pestanaSeleccionada = value;
   }
 
 
   mostrarFormularioInsertar() {
     this.formularioInsertar = true;
-  }
-
-
-  buscarDetallesTrabajoEditar() {
-
   }
 
   mostrarFormularioEditar() {
@@ -97,7 +109,5 @@ export class ProductComponent {
     this.formularioEliminar = true;
   }
 
-  buscarDetallesTrabajoEliminar() {
 
-  }
 }

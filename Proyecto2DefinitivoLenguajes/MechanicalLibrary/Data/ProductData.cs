@@ -56,6 +56,38 @@ namespace MechanicalLibrary.Data
 
         }
 
+        public IList<Product> getAllProductsByIdWorkDetail(int id) {
+            IList<Product> lista;
+            Product product;
+            SqlCommand cmdWorkDetail = new SqlCommand();
+            cmdWorkDetail.CommandText = "getAllProductsByIdWorkDetail";
+            cmdWorkDetail.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdWorkDetail.Parameters.Add(new SqlParameter("@id_work_detail", id));
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            connection.Open();
+            cmdWorkDetail.Connection = connection;
+            SqlDataReader myReader;
+            myReader = cmdWorkDetail.ExecuteReader();
+            lista = new List<Product>();
+
+            while (myReader.Read())
+            {
+                product = new Product();
+                product.IdProduct = myReader.GetInt32(0);
+                product.Name = myReader.GetString(1);
+                product.Quantity = myReader.GetInt32(2);
+                product.Order= myReader.GetBoolean(3);
+                product.Price = myReader.GetFloat(4);
+                product.WorkDetail.IdWorkDetail = myReader.GetInt32(5);
+                    
+               
+                lista.Add(product);
+            }
+            myReader.Close();
+            return lista;
+        }
+
 
     }
 }

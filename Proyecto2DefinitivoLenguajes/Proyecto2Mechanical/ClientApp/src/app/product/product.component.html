@@ -20,23 +20,23 @@
     [(ngModel)]="selectedWorkDetail">
   </ng-select>
   <br>
-  <div *ngIf="selectedWorkDetail>0">
+  <div *ngIf="selectedWorkDetail>0 && selectedWorkOrder>0">
 
-    <input type="text" class="form-control" placeholder="Nombre del producto">
+    <input type="text" class="form-control" placeholder="Nombre del producto" [(ngModel)]="productInsert.name">
     <br>
-    <input type="text" class="form-control" placeholder="Cantidad">
+    <input type="text" class="form-control" placeholder="Cantidad" [(ngModel)]="productInsert.quantity">
     <br>
-    <ng-select [items]="ordenado" bindLabel="name" placeholder="Seleccione si el producto ya fue ordenado" [(ngModel)]="selectedCity">
+    <ng-select [items]="ordenado" bindValue="state" bindLabel="name" placeholder="Seleccione si el producto ya fue ordenado" [(ngModel)]="productInsert.order">
     </ng-select>
     <br>
     <div class="input-group">
       <span class="input-group-addon">$</span>
-      <input type="number" class="form-control" placeholder="Precio">
+      <input type="number" class="form-control" placeholder="Precio" [(ngModel)]="productInsert.price">
       <span class="input-group-addon">.00</span>
     </div>
     <br>
     <div class="h1Class">
-      <button class="btn btn-primary">Insertar Producto</button>
+      <button class="btn btn-primary" (click)="insertProduct()">Insertar Producto</button>
     </div>
 
   </div>
@@ -52,7 +52,36 @@
   </ng-select>
   <br>
   <ng-select *ngIf="selectedWorkOrder>0" [items]="workDetail" bindLabel="description" bindValue="idWorkDetail" placeholder="Seleccione un detalle de trabajo"
-    [(ngModel)]="selectedWorkDetail">
+    [(ngModel)]="selectedWorkDetail" (change)="getProducts()">
   </ng-select>
   <br>
+
+  <div class="panel panel-default" *ngIf="products.length>0 && selectedWorkDetail>0 && selectedWorkOrder>0">
+
+    <div class="panel-body">
+  
+      <table class="table table-bordered table-striped">
+        <thead class="thead">
+          <tr>
+            <td>Id Producto</td>
+            <td>Nombre</td>
+            <td>Cantidad</td>
+            <td>Precio</td>
+            <td>#Detalle orden</td>
+          </tr>
+        </thead>
+        <tbody class="tbody">
+          <tr *ngFor="let product of products">
+            <td>{{product.idProduct}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.workDetail.idWorkDetail}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+  </div>
+
 </div>

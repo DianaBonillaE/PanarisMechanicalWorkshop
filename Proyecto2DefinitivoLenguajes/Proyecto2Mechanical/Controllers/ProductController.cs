@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MechanicalLibrary.Data;
 using MechanicalLibrary.Domain;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,10 +21,20 @@ namespace Proyecto2MechanicalApi.Controllers
             this.configuration = configuration;
         }
 
+        [HttpGet("{id:int}", Name = "GetProducts")]
+        public IList<Product> Get(int id)
+        {
+            ProductData workDetailData =
+                new ProductData(configuration.GetConnectionString("MechanicalContext").ToString());
+            return workDetailData.getAllProductsByIdWorkDetail(id);
+        }
+
         [HttpPost]
         public void Post([FromBody]Product product)
         {
+            ProductData productData = new ProductData(configuration.GetConnectionString("MechanicalContext").ToString());
 
+            productData.InsertarProducto(product);
         }
 
     }

@@ -32,6 +32,7 @@ import { WorkOrderService } from './service/work-order.service';
 import { VehicleInsertComponent } from './vehicle-insert/vehicle-insert.component';
 import { VehicleRegisterService } from './service/vehicle-register.service';
 import { VehicleComponent } from './vehicle/vehicle.component';
+import { ProductService } from './service/product.service';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,7 @@ import { VehicleComponent } from './vehicle/vehicle.component';
     useValue: {
       notFoundText: 'Este registro no es valido.'
     }
-  }, ClientService, WorkDetailOrderService, WorkOrderService, VehicleRegisterService],
+  }, ClientService, WorkDetailOrderService, WorkOrderService, VehicleRegisterService,ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
