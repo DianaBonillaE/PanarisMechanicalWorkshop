@@ -1,8 +1,9 @@
 ﻿using MechanicalLibrary.Domain;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
-using System.Text;
+using System.Linq;
 
 namespace MechanicalLibrary.Data
 {
@@ -57,6 +58,38 @@ namespace MechanicalLibrary.Data
             }//finally
         }//fin insertar
 
+        public List<Vehicle> GetAllVehicles()
+        {
+            String sqlSelect = "Select  * from Vehicle";
+            SqlDataAdapter daVehicles = new SqlDataAdapter(sqlSelect, new SqlConnection(connectionString));
+
+            DataSet dsVehicles = new DataSet();
+            daVehicles.Fill(dsVehicles, "Vehicle");
+
+            Dictionary<String, Vehicle> dictionary = new Dictionary<String, Vehicle>();
+            Vehicle vehicle = null;
+            foreach (DataRow row in dsVehicles.Tables["Vehicle"].Rows)
+            {
+                String id = row["vehicle_id"].ToString();
+                if (dictionary.ContainsKey(id) == false)
+                {
+                    vehicle = new Vehicle();
+                    vehicle.VehicleId = id;
+                    vehicle.Color = row["color"].ToString();
+                    vehicle.Brand = row["brand"].ToString();
+                    vehicle.Style = row["style"].ToString();
+                    vehicle.Year = row["year"].ToString();
+                    vehicle.Power = row["power"].ToString();
+                    vehicle.Displacement = row["displacement"].ToString();
+                    vehicle.Capacity = Int32.Parse(row["capacity"].ToString());
+                    vehicle.Weight = Int32.Parse(row["weight"].ToString());
+                    vehicle.ChasisNumber = row["chasis_number"].ToString();
+                    vehicle.MotorNumber = row["motor_number"].ToString();
+                    dictionary.Add(id, vehicle);
+                }//if
+            }//for
+            return dictionary.Values.ToList<Vehicle>();
+        }//getAll
 
     }
 }

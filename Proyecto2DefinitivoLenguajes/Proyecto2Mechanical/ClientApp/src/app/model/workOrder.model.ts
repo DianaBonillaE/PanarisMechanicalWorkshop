@@ -5,9 +5,8 @@ export class WorkOrder{
 
     idWorkOrder:number;
     description:String;
-    deliveryDate:DateTimeFormat;//ojo
+    deliveryDate:Date;
     totalPrice:number;
     client:Client=new Client();
-    vehicle:Vehicle=new Vehicle();
-    
+    vehicle:Vehicle=new Vehicle();  
 }
