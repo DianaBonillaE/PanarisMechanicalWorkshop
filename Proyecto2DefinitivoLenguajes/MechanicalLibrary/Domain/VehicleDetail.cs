@@ -36,5 +36,6 @@ namespace MechanicalLibrary.Domain
             TypeDetail = new TypeDetail();
             Condition = new Condition();
         }
+
     }
 }

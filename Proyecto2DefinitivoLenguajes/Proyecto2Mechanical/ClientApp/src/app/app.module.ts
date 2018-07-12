@@ -25,6 +25,7 @@ import { WorkOrderComponent } from './work-order/work-order.component';
 
 //ng select
 import { NgSelectModule, NG_SELECT_DEFAULT_CONFIG } from '@ng-select/ng-select';
+
 import { ClientService } from './service/client.service';
 import { Client } from './model/client.model';
 import { WorkDetailOrderService } from './service/work-detail-order.service';
@@ -33,6 +34,8 @@ import { VehicleInsertComponent } from './vehicle-insert/vehicle-insert.componen
 import { VehicleRegisterService } from './service/vehicle-register.service';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { ProductService } from './service/product.service';
+import { PdfComponent } from './report/pdf/pdf.component';
+
 
 @NgModule({
   declarations: [
@@ -48,7 +51,8 @@ import { ProductService } from './service/product.service';
     VehicleDetailComponent,
     WorkOrderComponent,
     VehicleInsertComponent,
-    VehicleComponent
+    VehicleComponent,
+    PdfComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
