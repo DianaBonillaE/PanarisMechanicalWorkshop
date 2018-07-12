@@ -30,6 +30,11 @@ namespace Proyecto2Mechanical.Controllers
             vehicleData.Insertar(vehicle);
 
         }
-
+        [HttpGet]
+        public IEnumerable<Vehicle> GetVehicles()
+        {
+            VehicleData vehicleData = new VehicleData(configuration.GetConnectionString("MechanicalContext").ToString());
+            return vehicleData.GetAllVehicles();
+        }
     }
 }

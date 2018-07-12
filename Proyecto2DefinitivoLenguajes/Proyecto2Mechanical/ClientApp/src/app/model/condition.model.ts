@@ -1,5 +1,5 @@
 export class Condition{
     
-    idCondition:number;
+    idCondition: number;
     description:String;
 }

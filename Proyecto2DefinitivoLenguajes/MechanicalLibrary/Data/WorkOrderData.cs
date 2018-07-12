@@ -52,7 +52,6 @@ namespace MechanicalLibrary.Data
             cmdProduct.CommandType = System.Data.CommandType.StoredProcedure;
             cmdProduct.Parameters.Add(new SqlParameter("@description", workOrder.Description));
             cmdProduct.Parameters.Add(new SqlParameter("@delivery_date", workOrder.DeliveryDate));
-            cmdProduct.Parameters.Add(new SqlParameter("@total_price", workOrder.TotalPrice));
             cmdProduct.Parameters.Add(new SqlParameter("@client_id", workOrder.Client.IdClient));
             cmdProduct.Parameters.Add(new SqlParameter("@vehicle_id", workOrder.Vehicle.VehicleId));
             SqlConnection connection = new SqlConnection(connectionString);
