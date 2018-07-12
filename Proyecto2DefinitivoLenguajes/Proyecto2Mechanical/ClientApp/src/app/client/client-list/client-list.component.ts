@@ -29,16 +29,12 @@ export class ClientListComponent implements OnInit {
   }
 
   click(client: Client) {
+    alert(client.clientName + ' ' + client.lastName);
     localStorage.setItem('client', JSON.stringify(client));
-  }
-
-  cambiarAEditar() {
-    localStorage.setItem('editar', 'edit');
   }
 
   metodo() {
     this.dataByOutput.emit("dos");
-    
   }
   }
 

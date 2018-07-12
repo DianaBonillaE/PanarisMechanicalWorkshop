@@ -21,4 +21,8 @@ export class ClientService {
     return this.http.get(this.baseUrl +'api/client');
   }
 
+  public edit(client: Client) {
+    return this.http.put(this.baseUrl + 'api/client' , client);
+  }
+
 }

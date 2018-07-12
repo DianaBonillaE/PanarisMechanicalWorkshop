@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace MechanicalLibrary.Data
 {
-  public  class ClientData
+    public class ClientData
     {
         String connectionString;
 
@@ -18,7 +18,7 @@ namespace MechanicalLibrary.Data
 
         public Client Insertar(Client client)
         {
-            SqlCommand cmdClient= new SqlCommand();
+            SqlCommand cmdClient = new SqlCommand();
             cmdClient.CommandText = "Mechanical_InsertClient";
             cmdClient.CommandType = System.Data.CommandType.StoredProcedure;
             cmdClient.Parameters.Add(new SqlParameter("@id_client", client.IdClient));
@@ -27,7 +27,7 @@ namespace MechanicalLibrary.Data
             cmdClient.Parameters.Add(new SqlParameter("@phone_number", client.PhoneNumber));
             cmdClient.Parameters.Add(new SqlParameter("@address", client.Address));
             cmdClient.Parameters.Add(new SqlParameter("@email", client.Email));
-         
+
 
             SqlConnection connection = new SqlConnection(connectionString);
             SqlTransaction transaction = null;
@@ -56,7 +56,7 @@ namespace MechanicalLibrary.Data
             }//finally
             return client;
         }//fin insertar
-        
+
         public List<Client> GetAllClients()
         {
             String sqlSelect = "Select  * from Client";
@@ -67,7 +67,7 @@ namespace MechanicalLibrary.Data
 
             Dictionary<String, Client> dictionary = new Dictionary<String, Client>();
             Client client = null;
-            foreach(DataRow row in dsClients.Tables["Client"].Rows)
+            foreach (DataRow row in dsClients.Tables["Client"].Rows)
             {
                 String id = row["id_client"].ToString();
                 if (dictionary.ContainsKey(id) == false)
@@ -84,5 +84,47 @@ namespace MechanicalLibrary.Data
             }//for
             return dictionary.Values.ToList<Client>();
         }//getAll
+
+
+
+        public void Edit(Client client)
+        {
+            SqlCommand cmdClient = new SqlCommand();
+            cmdClient.CommandText = "Mechanical_EditClient";
+            cmdClient.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdClient.Parameters.Add(new SqlParameter("@id_client", client.IdClient));
+            cmdClient.Parameters.Add(new SqlParameter("@client_name", client.ClientName));
+            cmdClient.Parameters.Add(new SqlParameter("@last_name", client.LastName));
+            cmdClient.Parameters.Add(new SqlParameter("@phone_number", client.PhoneNumber));
+            cmdClient.Parameters.Add(new SqlParameter("@address", client.Address));
+            cmdClient.Parameters.Add(new SqlParameter("@email", client.Email));
+
+
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlTransaction transaction = null;
+
+            try
+            {
+                connection.Open();
+                transaction = connection.BeginTransaction();
+                cmdClient.Connection = connection;
+                cmdClient.Transaction = transaction;
+                cmdClient.ExecuteNonQuery();
+                transaction.Commit();
+
+
+            }
+            catch (SqlException ex)
+            {
+                if (transaction != null)
+                    transaction.Rollback();
+                throw ex;
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+            }//finally
+        }
     }
 }
