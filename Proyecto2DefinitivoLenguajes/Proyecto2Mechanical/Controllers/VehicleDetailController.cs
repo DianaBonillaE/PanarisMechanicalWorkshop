@@ -26,7 +26,7 @@ namespace Proyecto2MechanicalApi.Controllers
         public void Post([FromBody]VehicleDetail vehicleDetail)
         {
             VehicleDetailData vehicleDetailData = new VehicleDetailData(configuration.GetConnectionString("MechanicalContext").ToString());
-            vehicleDetailData.InsertarDetalleTrabajo(vehicleDetail);
+            vehicleDetailData.InsertarDetalleVehiculo(vehicleDetail);
         }
 
     }
