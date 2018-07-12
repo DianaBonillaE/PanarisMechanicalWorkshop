@@ -10,6 +10,7 @@ namespace MechanicalLibrary.Data
     public class TypeDetailData
     {
         String connectionString;
+
         public TypeDetailData(string connectionString)
         {
             this.connectionString = connectionString;
@@ -17,11 +18,11 @@ namespace MechanicalLibrary.Data
 
         public List<TypeDetail> GetAllTypes()
         {
-            String sqlSelect = "Select  * from TypeDetail";
+            String sqlSelect = "SELECT * FROM Type_Detail";
             SqlDataAdapter daTypes = new SqlDataAdapter(sqlSelect, new SqlConnection(connectionString));
 
             DataSet dsTypes = new DataSet();
-            daTypes.Fill(dsTypes, "Condition");
+            daTypes.Fill(dsTypes, "Type_Detail");
 
             Dictionary<String, TypeDetail> dictionary = new Dictionary<String, TypeDetail>();
             TypeDetail typeDetail = null;

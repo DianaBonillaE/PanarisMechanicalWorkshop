@@ -85,7 +85,7 @@ export class WorkOrderComponent implements OnInit {
   }
 
   insertDV() {
-    this.service.inserTVehicleDetail(this.vehicleDetail).subscribe(
+    this.service.insertVehicleDetail(this.vehicleDetail).subscribe(
       (data: VehicleDetail) => {
         this.vehicleDetail = data;
       }

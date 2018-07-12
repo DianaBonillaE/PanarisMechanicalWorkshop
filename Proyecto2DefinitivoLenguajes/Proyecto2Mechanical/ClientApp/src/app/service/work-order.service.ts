@@ -29,7 +29,7 @@ export class WorkOrderService {
     return this.http.post(this.apiUrl + 'api/workDetailOrder', workDetail);
   }
 
-  public inserTVehicleDetail(vehicleDetail: VehicleDetail) {
+  public insertVehicleDetail(vehicleDetail: VehicleDetail) {
     return this.http.post(this.apiUrl + 'api/vehicleDetail', vehicleDetail);
   }
 

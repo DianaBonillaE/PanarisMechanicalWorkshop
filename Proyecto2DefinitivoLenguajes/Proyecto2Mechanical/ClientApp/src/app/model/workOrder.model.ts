@@ -5,7 +5,7 @@ export class WorkOrder{
 
     idWorkOrder:number;
     description:String;
-    deliveryDate:Date;
+    deliveryDate:DateTimeFormat;
     totalPrice:number;
     client:Client=new Client();
     vehicle:Vehicle=new Vehicle();  
