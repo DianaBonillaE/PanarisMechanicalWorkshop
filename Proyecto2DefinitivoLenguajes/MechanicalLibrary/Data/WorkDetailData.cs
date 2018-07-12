@@ -50,7 +50,6 @@ namespace MechanicalLibrary.Data
             SqlCommand cmdProduct = new SqlCommand();
             cmdProduct.CommandText = "Proyecto2Mechanical_insertWorkDetail";
             cmdProduct.CommandType = System.Data.CommandType.StoredProcedure;
-            cmdProduct.Parameters.Add(new SqlParameter("@id_work_detail", workDetail.IdWorkDetail));
             cmdProduct.Parameters.Add(new SqlParameter("@price", workDetail.Price));
             cmdProduct.Parameters.Add(new SqlParameter("@description", workDetail.Description));
             cmdProduct.Parameters.Add(new SqlParameter("@id_work_order", workDetail.WorkOrder.IdWorkOrder));

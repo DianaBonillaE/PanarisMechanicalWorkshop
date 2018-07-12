@@ -16,12 +16,11 @@ namespace MechanicalLibrary.Data
             this.connectionString = connectionString;
         }
 
-        public void InsertarDetalleTrabajo(VehicleDetail vehicleDetail)
+        public void InsertarDetalleVehiculo(VehicleDetail vehicleDetail)
         {
             SqlCommand cmdProduct = new SqlCommand();
             cmdProduct.CommandText = "Proyecto2Mechanical_insertVehicleDetail";
             cmdProduct.CommandType = System.Data.CommandType.StoredProcedure;
-            cmdProduct.Parameters.Add(new SqlParameter("@id_vehicle_detail", vehicleDetail.IdVehicleDetail));
             cmdProduct.Parameters.Add(new SqlParameter("@quantity", vehicleDetail.Quantity));
             cmdProduct.Parameters.Add(new SqlParameter("@observations", vehicleDetail.Observations));
             cmdProduct.Parameters.Add(new SqlParameter("@id_work_order", vehicleDetail.WorkOrder.IdWorkOrder));
