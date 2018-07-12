@@ -50,7 +50,6 @@ namespace MechanicalLibrary.Data
             SqlCommand cmdProduct = new SqlCommand();
             cmdProduct.CommandText = "Proyecto2Mechanical_insertWorkOrder";
             cmdProduct.CommandType = System.Data.CommandType.StoredProcedure;
-            cmdProduct.Parameters.Add(new SqlParameter("@id_work_order", workOrder.IdWorkOrder));
             cmdProduct.Parameters.Add(new SqlParameter("@description", workOrder.Description));
             cmdProduct.Parameters.Add(new SqlParameter("@delivery_date", workOrder.DeliveryDate));
             cmdProduct.Parameters.Add(new SqlParameter("@total_price", workOrder.TotalPrice));
@@ -67,7 +66,6 @@ namespace MechanicalLibrary.Data
                 cmdProduct.Transaction = transaction;
                 cmdProduct.ExecuteNonQuery();
                 transaction.Commit();
-
 
             }
             catch (SqlException ex)
