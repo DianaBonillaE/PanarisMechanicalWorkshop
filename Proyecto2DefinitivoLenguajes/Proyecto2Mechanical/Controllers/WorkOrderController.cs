@@ -24,15 +24,16 @@ namespace Proyecto2MechanicalApi.Controllers
         [HttpGet]
         public IList<WorkOrder> Get()
         {
-
             WorkOrderData workOrderData =
                 new WorkOrderData(configuration.GetConnectionString("MechanicalContext").ToString());
             return workOrderData.GetWorkOrders();
         }
 
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody] WorkOrder workOrder)
         {
+            WorkOrderData workOrderData = new WorkOrderData(configuration.GetConnectionString("MechanicalContext").ToString());
+            workOrderData.InsertarOrdenTrabajo(workOrder);
         }
 
     }

@@ -3,64 +3,109 @@
     <a (click)="cambiarPestana('uno')">Insertar orden de trabajo</a>
   </li>
   <li role="presentation" [ngClass]="{'active':pestanaSeleccionada === 'dos'}">
-    <a (click)="cambiarPestana('dos')">Ordenes de trabajo</a>
+    <a (click)="cambiarPestana('dos')">Insertar un detalle del trabajo</a>
   </li>
   <li role="presentation" [ngClass]="{'active':pestanaSeleccionada === 'tres'}">
-    <a (click)="cambiarPestana('tres')">Insertar un detalle del trabajo</a>
-  </li>
-  <li role="presentation" [ngClass]="{'active':pestanaSeleccionada === 'cuatro'}">
-    <a (click)="cambiarPestana('cuatro')">Detalles del trabajo</a>
-  </li>
-  <li role="presentation" [ngClass]="{'active':pestanaSeleccionada === 'cinco'}">
-    <a (click)="cambiarPestana('cinco')">Insertar un detalle del vehículo</a>
-  </li>
-  <li role="presentation" [ngClass]="{'active':pestanaSeleccionada === 'seis'}">
-    <a (click)="cambiarPestana('seis')">Detalles del vehiculo</a>
+    <a (click)="cambiarPestana('tres')">Insertar un detalle del vehículo</a>
   </li>
 </ul>
 
 <div *ngIf="pestanaSeleccionada==='uno'" class="container">
-  <h1 class="h1Class">Insertar una orden de trabajo</h1>
-  <br>
-  <br>
-  <input type="text" class="form-control" id="description" placeholder="Descripción de la solicitud" required [(ngModel)]="workOrder.description">
-  <br>
-  <input type="text" class="form-control" id=" deliveryDate" placeholder="Fecha aproximada de entrega" required [(ngModel)]="workOrder. deliveryDate">
-  <br>
-  <div class="input-group">
-    <span class="input-group-addon">$</span>
-    <input type="number" class="form-control" placeholder="Precio" [(ngModel)]="workOrder. totalPrice">
-    <span class="input-group-addon">.00</span>
+  <div id="pricing" class="container-fluid">
+    <div class="row slideanim">
+      <div class="col-sm-2 col-xs-12">   </div>
+      <div class="col-sm-8 col-xs-12">
+        <div class="panel panel-default ">
+          <div class="panel-heading text-center">
+            <h1>Insertar una orden de trabajo</h1>
+          </div>
+          <div class="panel-body">
+            <div class="form-group" style="width: 85%; margin-left: 10%">
+              <input type="text" class="form-control" id="description" placeholder="Descripción de la solicitud" required [(ngModel)]="workOrder.description">
+            </div>
+            <div class="form-group" style="width: 85%; margin-left: 10%">
+              <input type="date" class="form-control" id="deliveryDate" placeholder="Fecha aproximada de entrega" required [(ngModel)]="workOrder.deliveryDate">
+            </div>
+            <div class="form-group" style="width: 85%; margin-left: 10%">
+              <ng-select [items]="ordenado" bindLabel="client" placeholder="Seleccione el cliente" [(ngModel)]="workOrder.client.idClient">
+              </ng-select>
+            </div>
+            <div class="form-group" style="width: 85%; margin-left: 10%">
+              <ng-select [items]="ordenado" bindLabel="vehicle" placeholder="Seleccione el vehículo" [(ngModel)]="workOrder.vehicle.vehicleId">
+              </ng-select>
+            </div>
+            <a style="margin-left: 30%" href="" type="submit" class="btn btn-cb" (click)="insertWO()">Insertar orden de trabajo</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <br>
-  <ng-select [items]="ordenado" bindLabel="client" placeholder="Seleccione el cliente" [(ngModel)]="workOrder.client.idClient">
-  </ng-select>
-  <br>
-  <ng-select [items]="ordenado" bindLabel="vehicle" placeholder="Seleccione el vehículo" [(ngModel)]="workOrder.vehicle.vehicleId">
-  </ng-select>
-  <br>
-  <a style="margin-left: 35%" type="submit" class="btn btn-success" (click)="insertWO()">Insertar orden de trabajo</a>
 </div>
 
 <div *ngIf="pestanaSeleccionada==='dos'" class="container">
-    <h1 class="h1Class">Insertar un detalle de trabajo</h1>
-    <br>
-    <br>
-    <input type="text" class="form-control" id="description" placeholder="Descripción de la solicitud" required [(ngModel)]="workOrder.description">
-    <br>
-    <input type="text" class="form-control" id=" deliveryDate" placeholder="Fecha aproximada de entrega" required [(ngModel)]="workOrder. deliveryDate">
-    <br>
-    <div class="input-group">
-      <span class="input-group-addon">$</span>
-      <input type="number" class="form-control" placeholder="Precio" [(ngModel)]="workOrder. totalPrice">
-      <span class="input-group-addon">.00</span>
+  <div id="pricing" class="container-fluid">
+    <div class="row slideanim">
+      <div class="col-sm-2 col-xs-12">   </div>
+      <div class="col-sm-8 col-xs-12">
+        <div class="panel panel-default ">
+          <div class="panel-heading text-center">
+            <h1>Insertar un detalle del trabajo</h1>
+          </div>
+          <div class="panel-body">
+            <div class="form-group" style="width: 95%; margin-left: 5%">
+              <ng-select [items]="ordenado" bindLabel="workOrder" placeholder="Seleccione la orden de trabajo" [(ngModel)]="workDetail.workOrder.idWorkOrder">
+              </ng-select>
+            </div>
+            <div class="form-group" style="width: 95%; margin-left: 5%">
+              <div class="input-group">
+                <span class="input-group-addon">$</span>
+                <input type="number" class="form-control" placeholder="Precio de mano de obra" [(ngModel)]="workDetail.price">
+                <span class="input-group-addon">.00</span>
+              </div>
+            </div>
+            <div class="form-group" style="width: 95%; margin-left: 5%">
+              <input type="text" class="form-control" id="description" placeholder="Descripción del detalle" required [(ngModel)]="workDetail.description">
+            </div>
+            <a style="margin-left: 30%;" href="" type="submit" class="btn btn-cb" (click)="insertWO()">Insertar detalle de trabajo</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <br>
-    <ng-select [items]="ordenado" bindLabel="client" placeholder="Seleccione el cliente" [(ngModel)]="workOrder.client.idClient">
-    </ng-select>
-    <br>
-    <ng-select [items]="ordenado" bindLabel="vehicle" placeholder="Seleccione el vehículo" [(ngModel)]="workOrder.vehicle.vehicleId">
-    </ng-select>
-    <br>
-    <a style="margin-left: 35%" type="submit" class="btn btn-success" (click)="insertWO()">Insertar orden de trabajo</a>
+  </div>
+</div>
+
+<div *ngIf="pestanaSeleccionada==='tres'" class="container">
+  <div id="pricing" class="container-fluid">
+    <div class="row slideanim">
+      <div class="col-sm-2 col-xs-12">   </div>
+      <div class="col-sm-8 col-xs-12">
+        <div class="panel panel-default ">
+          <div class="panel-heading text-center">
+            <h1>Insertar un detalle del vehículo</h1>
+          </div>
+          <div class="panel-body">
+            <div class="form-group" style="width: 85%; margin-left: 10%">
+              <input type="number" class="form-control" min="1" id="quantity" placeholder="Cantidad" required [(ngModel)]="vehicleDetail.quantity">
+            </div>
+            <div class="form-group" style="width: 85%; margin-left: 10%">
+              <input type="text" class="form-control" id="observations" placeholder="Observaciones" required [(ngModel)]="vehicleDetail.observations">
+            </div>
+            <div class="form-group" style="width: 85%; margin-left: 10%">
+              <ng-select [items]="ordenado" bindLabel="workOrder" placeholder="Seleccione la orden de trabajo" [(ngModel)]="vehicleDetail.workOrder.idWorkOrder">
+              </ng-select>
+            </div>
+            <div class="form-group" style="width: 85%; margin-left: 10%">
+              <ng-select [items]="ordenado" bindLabel="typeDetail" placeholder="Seleccione el tipo de dellate" [(ngModel)]="vehicleDetail.typeDetail.idTypeDetail">
+              </ng-select>
+            </div>
+            <div class="form-group" style="width: 85%; margin-left: 10%">
+              <ng-select [items]="ordenado" bindLabel="condition" placeholder="Seleccione el estado" [(ngModel)]="vehicleDetail.condition.idCondition">
+              </ng-select>
+            </div>
+            <a style="margin-left: 30%" href=""  type="submit" class="btn btn-cb" (click)="insertWO()">Insertar orden de trabajo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
