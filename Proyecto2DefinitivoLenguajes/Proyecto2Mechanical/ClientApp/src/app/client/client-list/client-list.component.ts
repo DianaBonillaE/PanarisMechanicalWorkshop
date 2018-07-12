@@ -38,6 +38,7 @@ export class ClientListComponent implements OnInit {
 
   metodo() {
     this.dataByOutput.emit("dos");
+    
   }
   }
 

@@ -19,6 +19,7 @@ namespace Proyecto2MechanicalApi.Controllers
         public VehicleDetailController(IConfiguration configuration)
         {
             this.configuration = configuration;
+
         }
 
         [HttpPost]
