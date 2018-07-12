@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MechanicalLibrary.Data
 {
-    class VehicleDetailData
+    public class VehicleDetailData
     {
         String connectionString;
 
