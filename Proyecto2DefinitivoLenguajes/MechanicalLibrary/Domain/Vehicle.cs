@@ -10,7 +10,7 @@ namespace MechanicalLibrary.Domain
         String color;
         String brand;
         String style;
-        DateTime year;
+        String year;
         String power;
         String displacement;
         int capacity;
@@ -22,7 +22,7 @@ namespace MechanicalLibrary.Domain
         public string Color { get => color; set => color = value; }
         public string Brand { get => brand; set => brand = value; }
         public string Style { get => style; set => style = value; }
-        public DateTime Year { get => year; set => year = value; }
+        public String Year { get => year; set => year = value; }
         public string Power { get => power; set => power = value; }
         public string Displacement { get => displacement; set => displacement = value; }
         public int Capacity { get => capacity; set => capacity = value; }
@@ -30,7 +30,7 @@ namespace MechanicalLibrary.Domain
         public string ChasisNumber { get => chasisNumber; set => chasisNumber = value; }
         public string MotorNumber { get => motorNumber; set => motorNumber = value; }
 
-        public Vehicle(string vehicleId, string color, string brand, string style, DateTime year, string power, string displacement, int capacity, int weight, string chasisNumber, string motorNumber)
+        public Vehicle(string vehicleId, string color, string brand, string style,String year, string power, string displacement, int capacity, int weight, string chasisNumber, string motorNumber)
         {
             this.VehicleId = vehicleId;
             this.Color = color;
