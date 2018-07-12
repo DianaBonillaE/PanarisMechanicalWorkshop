@@ -28,7 +28,7 @@ namespace MechanicalLibrary.Data
             cmdProduct.Parameters.Add(new SqlParameter("@id_condition", vehicleDetail.Condition.IdCondition));
             SqlConnection connection = new SqlConnection(connectionString);
             SqlTransaction transaction = null;
-
+            
             try
             {
                 connection.Open();

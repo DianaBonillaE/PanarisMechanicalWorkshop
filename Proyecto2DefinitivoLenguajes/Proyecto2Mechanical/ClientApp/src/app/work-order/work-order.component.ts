@@ -42,6 +42,7 @@ export class WorkOrderComponent implements OnInit {
   constructor(private router: Router, private service: WorkOrderService) { }
 
   ngOnInit() {
+    console.log(this.vehicleDetail);
     this.service.getAllClients().subscribe((data: Client[]) => {
       this.clients = data;
     })
@@ -85,11 +86,8 @@ export class WorkOrderComponent implements OnInit {
   }
 
   insertDV() {
-    this.service.insertVehicleDetail(this.vehicleDetail).subscribe(
-      (data: VehicleDetail) => {
-        this.vehicleDetail = data;
-      }
-    )
+    console.log(this.vehicleDetail.quantity);
+    this.service.insertVehicleDetail(this.vehicleDetail).subscribe();
   }
 
 }

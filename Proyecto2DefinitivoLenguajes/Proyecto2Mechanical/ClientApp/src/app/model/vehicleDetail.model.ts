@@ -4,9 +4,9 @@ import { Condition } from "./condition.model";
 
 export class VehicleDetail {
 
-    idVehicleDetail: number;
-    quantity: number;
-    observations: String;
+    idVehicleDetail: string;
+    quantity: string;
+    observations: string;
     workOrder: WorkOrder = new WorkOrder();
     typeDetail: TypeDetail = new TypeDetail();;
     condition: Condition = new Condition();

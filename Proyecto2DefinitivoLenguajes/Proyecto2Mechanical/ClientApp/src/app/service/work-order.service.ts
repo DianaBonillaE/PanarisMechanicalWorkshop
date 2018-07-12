@@ -30,7 +30,9 @@ export class WorkOrderService {
   }
 
   public insertVehicleDetail(vehicleDetail: VehicleDetail) {
-    return this.http.post(this.apiUrl + 'api/vehicleDetail', vehicleDetail);
+    console.log(vehicleDetail.observations);
+    console.log(vehicleDetail.quantity);
+    return this.http.post(this.apiUrl + 'api/prueba', vehicleDetail);
   }
 
   public getAllClients() {
