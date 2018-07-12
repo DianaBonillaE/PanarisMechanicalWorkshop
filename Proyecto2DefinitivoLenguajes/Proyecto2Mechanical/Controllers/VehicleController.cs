@@ -26,8 +26,8 @@ namespace Proyecto2Mechanical.Controllers
         public void Post([FromBody]Vehicle vehicle)
         {
             VehicleData vehicleData = new VehicleData(configuration.GetConnectionString("MechanicalContext").ToString());
-            Console.WriteLine(vehicle.ToString());
-            //  vehicleData.Insertar(vehicle);
+          //  Console.WriteLine(vehicle.ToString());
+            vehicleData.Insertar(vehicle);
 
         }
 

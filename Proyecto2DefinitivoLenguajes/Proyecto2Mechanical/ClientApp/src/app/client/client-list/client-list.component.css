@@ -22,14 +22,10 @@ table {
   margin-left: 40px;
 }
 
-.button {
+.btn-ttc,
+.btn-ttc:hover,
+.btn-ttc:active {
   margin-left: 60%;
-  hover
-
-{
-  background-color: rgb(22, 120, 185);
-  color: rgb(22, 120, 185);
-  box-shadow: inset 0 0 0 3px rgb(15, 88, 121);
-  ;
-}
+  background-color: #1abc9c !important;
+  color: snow;
 }

@@ -3,9 +3,6 @@ import { Client } from '../../model/client.model';
 import {Router} from '@angular/router';
 import { ClientService } from '../../service/client.service';
 
-
-
-
 @Component({
   selector: 'app-client-list',
   templateUrl: './client-list.component.html',
