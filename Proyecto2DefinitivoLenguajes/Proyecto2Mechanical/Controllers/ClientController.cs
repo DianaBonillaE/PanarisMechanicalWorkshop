@@ -37,5 +37,12 @@ namespace Proyecto2MechanicalApi.Controllers
             clientData.Insertar(cliente);
             
         }
+
+        [HttpPut]
+        public void Put([FromBody]Client client)
+        {
+            ClientData clientData = new ClientData(configuration.GetConnectionString("MechanicalContext").ToString());
+            clientData.Edit(client);
+        }
     }
 }
