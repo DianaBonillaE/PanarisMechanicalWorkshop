@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-client',
@@ -6,14 +6,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./client.component.css']
 })
 export class ClientComponent implements OnInit {
-  pestanaSeleccionada: String = "uno";
+  pestanaSeleccionada: String;
   constructor() { }
 
   ngOnInit() {
+    this.pestanaSeleccionada = "uno";
   }
 
   cambiarPestana(value: String) {
-
     this.pestanaSeleccionada = value;
+  }
+
+  // For @Output
+  dataFromChild: string;
+  fetchDataFromChild(data: string) {
+    this.dataFromChild = data;
+  }
+
+  mostrar() {
+    alert(this.dataFromChild);
   }
 }

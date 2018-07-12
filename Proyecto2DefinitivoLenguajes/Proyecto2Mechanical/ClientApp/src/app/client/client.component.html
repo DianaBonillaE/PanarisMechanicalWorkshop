@@ -9,11 +9,12 @@
   </ul>
   
   <div *ngIf="pestanaSeleccionada==='uno'" class="container">
-   <app-client-list></app-client-list>
+   <app-client-list (dataByOutput)="fetchDataFromChild($event)"></app-client-list>
   </div>
   <div *ngIf="pestanaSeleccionada==='dos'" class="container">
  <app-client-edit></app-client-edit>
   </div>
+<button type="button" (click)="mostrar()">Probar</button>
   <div class="container-fluid bg-2 text-center">
     <h3 class="margin">Mechanical Workshop</h3>
     <p>El mejor hospital para tu vehiculo </p>

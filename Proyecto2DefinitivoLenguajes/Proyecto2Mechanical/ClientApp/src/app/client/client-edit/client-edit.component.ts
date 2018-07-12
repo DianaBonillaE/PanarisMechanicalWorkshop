@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-client-edit',
@@ -11,5 +11,4 @@ export class ClientEditComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

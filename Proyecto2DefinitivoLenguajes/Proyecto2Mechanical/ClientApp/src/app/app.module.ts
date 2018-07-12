@@ -31,6 +31,7 @@ import { WorkDetailOrderService } from './service/work-detail-order.service';
 import { WorkOrderService } from './service/work-order.service';
 import { VehicleInsertComponent } from './vehicle-insert/vehicle-insert.component';
 import { VehicleRegisterService } from './service/vehicle-register.service';
+import { VehicleComponent } from './vehicle/vehicle.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { VehicleRegisterService } from './service/vehicle-register.service';
     ReportComponent,
     VehicleDetailComponent,
     WorkOrderComponent,
-    VehicleInsertComponent
+    VehicleInsertComponent,
+    VehicleComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
