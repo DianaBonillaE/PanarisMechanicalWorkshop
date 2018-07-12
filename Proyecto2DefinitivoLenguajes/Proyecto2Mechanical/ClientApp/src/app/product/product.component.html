@@ -3,26 +3,24 @@
     <a (click)="cambiarPestana('uno')">Insertar Producto</a>
   </li>
   <li role="presentation" [ngClass]="{'active':pestanaSeleccionada === 'dos'}">
-    <a (click)="cambiarPestana('dos')">Editar Producto</a>
+    <a (click)="cambiarPestana('dos')">Mostrar Productos</a>
   </li>
-  <li role="presentation" [ngClass]="{'active':pestanaSeleccionada === 'tres'}">
-    <a (click)="cambiarPestana('tres')">Eliminar Producto</a>
-  </li>
+
 </ul>
 
 <div *ngIf="pestanaSeleccionada==='uno'" class="container">
 
   <h1 class="h1Class">Insertar un producto en un detalle de orden</h1>
 
-  <ng-select [items]="cities" bindLabel="name" placeholder="Seleccione una Orden de trabajo" (change)="buscarDetallesTrabajo()"
-    [(ngModel)]="selectedCity">
+  <ng-select [items]="workOrder" bindLabel="description" bindValue="idWorkOrder" placeholder="Seleccione una Orden de trabajo" (change)="getWorkDetailsByOrder()"
+    [(ngModel)]="selectedWorkOrder">
   </ng-select>
   <br>
-  <ng-select [items]="cities" bindLabel="name" placeholder="Seleccione un detalle de trabajo" (change)="mostrarFormularioInsertar()"
-    [(ngModel)]="selectedCity">
+  <ng-select *ngIf="selectedWorkOrder>0" [items]="workDetail" bindLabel="description" bindValue="idWorkDetail" placeholder="Seleccione un detalle de trabajo"
+    [(ngModel)]="selectedWorkDetail">
   </ng-select>
   <br>
-  <div *ngIf="formularioInsertar===true">
+  <div *ngIf="selectedWorkDetail>0">
 
     <input type="text" class="form-control" placeholder="Nombre del producto">
     <br>
@@ -48,53 +46,13 @@
 
 <div *ngIf="pestanaSeleccionada==='dos'" class="container">
 
-  <h1 class="h1Class">Editar un producto</h1>
-  <ng-select [items]="cities" bindLabel="name" placeholder="Seleccione una Orden de trabajo" (change)="buscarDetallesTrabajoEditar()"
-    [(ngModel)]="selectedCity">
+  <h1 class="h1Class">Mostrar productos</h1>
+  <ng-select [items]="workOrder" bindLabel="description" bindValue="idWorkOrder" placeholder="Seleccione una Orden de trabajo" (change)="getWorkDetailsByOrder()"
+    [(ngModel)]="selectedWorkOrder">
   </ng-select>
   <br>
-  <ng-select [items]="cities" bindLabel="name" placeholder="Seleccione un detalle de trabajo" (change)="mostrarFormularioEditar()"
-    [(ngModel)]="selectedCity">
+  <ng-select *ngIf="selectedWorkOrder>0" [items]="workDetail" bindLabel="description" bindValue="idWorkDetail" placeholder="Seleccione un detalle de trabajo"
+    [(ngModel)]="selectedWorkDetail">
   </ng-select>
   <br>
-
-  <div *ngIf="formularioEditar===true">
-
-    <input type="text" class="form-control" placeholder="Nombre del producto">
-    <br>
-    <input type="text" class="form-control" placeholder="Cantidad">
-    <br>    
-    <div class="input-group">
-      <span class="input-group-addon">$</span>
-      <input type="number" class="form-control" placeholder="Precio">
-      <span class="input-group-addon">.00</span>
-    </div>
-    <br>
-    <div class="h1Class">
-      <button class="btn btn-primary">Insertar Producto</button>
-    </div>
-
-  </div>
-</div>
-
-<div *ngIf="pestanaSeleccionada==='tres'" class="container">
-
-  <h1 class="h1Class">Eliminar un producto</h1>
-  <ng-select [items]="cities" bindLabel="name" placeholder="Seleccione una Orden de trabajo" (change)="buscarDetallesTrabajoEliminar()"
-    [(ngModel)]="selectedCity">
-  </ng-select>
-  <br>
-  <ng-select [items]="cities" bindLabel="name" placeholder="Seleccione un detalle de trabajo" (change)="mostrarFormularioEliminar()"
-    [(ngModel)]="selectedCity">
-  </ng-select>
-  <br>
-
-  <div *ngIf="formularioEliminar===true">
-
-
-    <div class="h1Class">
-      <button class="btn btn-primary">Eliminar Producto Seleccionado</button>
-    </div>
-
-  </div>
 </div>

@@ -4,15 +4,20 @@ import { Observable } from 'rxjs/Observable';
 import { Vehicle } from '../model/vehicle.model';
 
 @Injectable()
-export class VehicleService {
+export class VehicleRegisterService {
+
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
+
   baseUrl: String;
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.baseUrl = baseUrl;
   }
+
   public insertV(vehicle: Vehicle) {
+    console.log(vehicle);
     return this.http.post(this.baseUrl + 'api/vehicle', vehicle);
   }
+
 }

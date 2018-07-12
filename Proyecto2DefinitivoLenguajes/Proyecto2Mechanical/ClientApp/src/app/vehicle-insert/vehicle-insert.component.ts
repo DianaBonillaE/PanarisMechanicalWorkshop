@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Vehicle } from '../model/vehicle.model';
 import { Router } from '@angular/router';
-import { VehicleService } from '../service/vehicle-service';
+import { VehicleRegisterService } from '../service/vehicle-register.service';
 
 @Component({
   selector: 'app-vehicle-insert',
@@ -9,8 +9,9 @@ import { VehicleService } from '../service/vehicle-service';
   styleUrls: ['./vehicle-insert.component.css']
 })
 export class VehicleInsertComponent implements OnInit {
+
   vehicle: Vehicle = new Vehicle();
-  constructor(private router: Router, private service: VehicleService) { }
+  constructor(private router: Router, private service: VehicleRegisterService) { }
 
   ngOnInit() {
   }
