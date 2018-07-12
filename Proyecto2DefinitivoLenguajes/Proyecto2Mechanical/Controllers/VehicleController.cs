@@ -11,7 +11,7 @@ using MechanicalLibrary.Data;
 namespace Proyecto2Mechanical.Controllers
 {
     [Produces("application/json")]
-    [Route("api/[controller]")]
+    [Route("api/vehicle")]
     public class VehicleController : Controller
     {
 
@@ -26,7 +26,8 @@ namespace Proyecto2Mechanical.Controllers
         public void Post([FromBody]Vehicle vehicle)
         {
             VehicleData vehicleData = new VehicleData(configuration.GetConnectionString("MechanicalContext").ToString());
-            vehicleData.Insertar(vehicle);
+            Console.WriteLine(vehicle.ToString());
+            //  vehicleData.Insertar(vehicle);
 
         }
 

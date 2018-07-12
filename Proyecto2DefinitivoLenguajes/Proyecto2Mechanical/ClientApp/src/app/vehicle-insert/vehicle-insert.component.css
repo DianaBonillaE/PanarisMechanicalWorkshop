@@ -1,0 +1,60 @@
+.btn-ttc,
+.btn-ttc:hover,
+.btn-ttc:active {
+  background-color: #1abc9c !important;
+  color: snow;
+}
+
+
+p {
+  font-size: 16px;
+  color: #474e5d;
+}
+
+.bg-2 {
+  background-color: #474e5d; /* Dark Blue */
+  color: #ffffff;
+}
+
+.panel {
+  border: 1px solid #69B28E;
+  border-radius: 0 !important;
+  transition: box-shadow 0.5s;
+  width: 370px;
+  margin-top: 35px;
+}
+
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+
+
+p.footer {
+  color: #fff;
+}
+
+.panel-footer .btn:hover {
+  border: 1px solid #69B28E;
+  background-color: #fff !important;
+  color: #69B28E;
+}
+
+.panel-heading {
+  color: #fff !important;
+  background-color: #69B28E !important;
+  padding: 15px;
+  border-bottom: 1px solid transparent;
+}
+
+.panel-footer {
+  background-color: white !important;
+}
+
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
